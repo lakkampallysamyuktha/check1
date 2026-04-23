@@ -10,12 +10,20 @@
 <div class="auth-box">
   <h2>Login</h2>
 
-  <input type="email" id="loginEmail" placeholder="Email">
+  <!-- ✅ IDs MUST MATCH JS -->
+  <input type="email" id="loginEmail" placeholder="Email Address">
   <input type="password" id="loginPassword" placeholder="Password">
 
-  <button onclick="login()">Login</button>
+  <select id="loginRole">
+    <option value="">Select Role</option>
+    <option value="employee">Employee</option>
+    <option value="admin">Admin</option>
+  </select>
 
-  <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+  <!-- ✅ BUTTON CONNECTED -->
+  <button onclick="login()">Login →</button>
+
+  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
 </div>
 
 <script src="script.js"></script>
