@@ -53,30 +53,117 @@ body {
 }
 
 /* ================= MOBILE ================= */
+/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
+
+  /* ===== NAVBAR ===== */
+  .menu-toggle {
+    display: block;
+    color: white;
+  }
 
   .nav-links {
     position: absolute;
-    top: 70px;   /* below navbar */
+    top: 60px;
     left: 0;
     width: 100%;
 
     background: #0f172a;
-
     flex-direction: column;
     align-items: center;
 
     max-height: 0;
     overflow: hidden;
-
     transition: 0.4s ease;
-    z-index: 999;  /* ensure above content */
   }
 
   .nav-links.active {
     max-height: 300px;
     padding: 20px 0;
   }
+
+  .login-btn {
+    display: none;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== WHY ===== */
+  .why-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== STATS ===== */
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* ===== TESTIMONIAL ===== */
+  .testimonial-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== BLOG ===== */
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== CTA ===== */
+  .cta-content h2 {
+    font-size: 24px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  /* ===== GLOBAL FIX ===== */
+  body {
+    overflow-x: hidden;
+  }
+
 }
 /* ================= HERO ================= */
 .hero {
