@@ -85,11 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
-<script>
+  // hamburger toggle
   const toggle = document.getElementById("menu-toggle");
   const nav = document.getElementById("nav-links");
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-</script>
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
+
+});
