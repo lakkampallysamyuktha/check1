@@ -9,59 +9,49 @@ function signup() {
   let role = document.getElementById("signupRole").value;
 
   if (!name || !email || !password || !role) {
-    alert("Please fill all fields ❌");
+    alert("Fill all fields ❌");
     return;
   }
 
-  let user = {
-    name,
-    email,
-    password,
-    role
-  };
+  let user = { name, email, password, role };
 
   localStorage.setItem("user_" + email, JSON.stringify(user));
 
   alert("Signup successful ✅");
 
-  window.location.href = "login.html";
-}
+  console.log("Going to login page...");
 
+  window.location.assign("login.html");   /* ✅ FIX NAVIGATION */
+}
 
 // LOGIN
 function login() {
 
-  let email = document.getElementById("loginEmail").value.trim();
-  let password = document.getElementById("loginPassword").value.trim();
-
-  if (!email || !password) {
-    alert("Please fill all fields ❌");
-    return;
-  }
+  let email = document.getElementById("loginEmail").value;
+  let password = document.getElementById("loginPassword").value;
 
   let storedUser = localStorage.getItem("user_" + email);
 
   if (!storedUser) {
-    alert("User not found ❌ Please signup first");
+    alert("User not found");
     return;
   }
 
   let user = JSON.parse(storedUser);
 
   if (user.password !== password) {
-    alert("Wrong password ❌");
+    alert("Wrong password");
     return;
   }
 
-  localStorage.setItem("loggedUser", email);
+  alert("Login success");
 
-  alert("Login successful ✅");
+  console.log("Redirecting...");
 
-  // REDIRECT BASED ON ROLE
   if (user.role === "admin") {
-    window.location.href = "admin.html";
+    window.location.assign("admin.html");
   } else {
-    window.location.href = "dashboard.html";
+    window.location.assign("dashboard.html");
   }
 }
 
