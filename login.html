@@ -2,31 +2,23 @@
 <html>
 <head>
   <title>Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="auth-body">
+<body>
 
-<div class="auth-box">
   <h2>Login</h2>
 
-  <!-- ✅ IDs MUST MATCH JS -->
-  <input type="email" id="loginEmail" placeholder="Email Address">
-  <input type="password" id="loginPassword" placeholder="Password">
+  <!-- INPUTS -->
+  <input type="email" id="loginEmail" placeholder="Enter Email"><br><br>
+  <input type="password" id="loginPassword" placeholder="Enter Password"><br><br>
 
-  <select id="loginRole">
-    <option value="">Select Role</option>
-    <option value="employee">Employee</option>
-    <option value="admin">Admin</option>
-  </select>
+  <!-- BUTTON -->
+  <button onclick="login()">Login</button>
 
-  <!-- ✅ BUTTON CONNECTED -->
-  <button onclick="login()">Login →</button>
+  <p>Don't have account? <a href="signup.html">Signup</a></p>
 
-  <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
-</div>
+  <!-- JS -->
+  <script src="script.js"></script>
 
-<script src="script.js"></script>
 </body>
 </html>
