@@ -53,47 +53,71 @@ body {
 }
 
 /* ================= MOBILE FIX ================= */
+/* ================= MOBILE PERFECT FIX ================= */
+
+/* STOP SIDE SCROLL */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* GLOBAL SAFETY */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* REMOVE FIXED WIDTHS */
+.blog-card,
+.card,
+.contact-box {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+/* FIX CONTAINERS */
+.blog-section,
+.contact-section,
+.about-container,
+.footer-container,
+.services .grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* GRID FIX (REAL RESPONSIVE) */
+.services-grid,
+.blog-container,
+.testimonial-container,
+.why-container {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* MOBILE CLEAN STACK */
 @media (max-width: 768px) {
 
-  /* ===== NAVBAR ===== */
-  .menu-toggle {
-    display: block;
-    color: white;
+  /* FORCE SINGLE COLUMN */
+  .services-grid,
+  .blog-container,
+  .testimonial-container,
+  .why-container,
+  .footer-container {
+    grid-template-columns: 1fr !important;
   }
 
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-
-    background: #0f172a;
-    flex-direction: column;
-    align-items: center;
-
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.4s ease;
-  }
-
-  .nav-links.active {
-    max-height: 300px;
-    padding: 20px 0;
-  }
-
-  .login-btn {
-    display: none;
-  }
-
-  /* ===== HERO ===== */
+  /* HERO FIX */
   .hero {
-    height: 100vh;
-    padding: 20px;
-    text-align: center;
+    height: auto;
+    min-height: 100vh;
+    padding: 60px 20px;
   }
 
   .hero h1 {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.3;
   }
 
@@ -101,71 +125,18 @@ body {
     font-size: 14px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
+  /* NAVBAR FIX */
+  .nav-links {
+    width: 100%;
+    left: 0;
   }
 
-  /* ===== ABOUT ===== */
-  .about-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  /* ===== SERVICES ===== */
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ===== WHY ===== */
-  .why-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* ===== STATS ===== */
-  .stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  /* ===== TESTIMONIAL ===== */
-  .testimonial-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* ===== BLOG ===== */
-  .blog-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* ===== CTA ===== */
-  .cta-content h2 {
-    font-size: 24px;
-  }
-
+  /* BUTTON FULL WIDTH */
   .cta-btn {
     width: 100%;
     max-width: 250px;
   }
 
-  /* ===== FOOTER ===== */
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  /* ===== GLOBAL FIX ===== */
-  body {
-    overflow-x: hidden;
-  }
-
-}
-* {
-  outline: 1px solid red;
 }
 /* ================= HERO ================= */
 .hero {
