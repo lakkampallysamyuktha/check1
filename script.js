@@ -71,7 +71,7 @@ function logout() {
   localStorage.removeItem("loggedUser");
 
   // redirect to error page
-  window.location.href = "error.html";
+  window.location.href = "login.html";
 }
 
 
