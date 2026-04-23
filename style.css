@@ -52,7 +52,6 @@ body {
   cursor: pointer;
 }
 
-/* ================= MOBILE ================= */
 /* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
 
@@ -164,6 +163,9 @@ body {
     overflow-x: hidden;
   }
 
+}
+* {
+  outline: 1px solid red;
 }
 /* ================= HERO ================= */
 .hero {
