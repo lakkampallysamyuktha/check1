@@ -494,7 +494,7 @@ img {
   color: #6c63ff;
   text-decoration: none;
 }
-/* DASHBOARD LAYOUT */
+/* MAIN LAYOUT */
 .main {
   display: flex;
   height: 100vh;
@@ -539,7 +539,7 @@ img {
   background: #f1f5f9;
 }
 
-/* TOPBAR */
+/* TOP BAR */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -547,7 +547,7 @@ img {
 }
 
 .topbar input {
-  padding: 8px;
+  padding: 10px;
   width: 250px;
 }
 
@@ -564,4 +564,13 @@ img {
   border-radius: 10px;
   width: 250px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* COLORS */
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }
