@@ -2,14 +2,20 @@
 <html>
 <head>
   <title>Signup</title>
+
+  <!-- ✅ IMPORTANT (mobile fix also) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
   <h2>Signup</h2>
 
+  <!-- INPUTS -->
   <input type="text" id="signupName" placeholder="Name"><br><br>
+
   <input type="email" id="signupEmail" placeholder="Email"><br><br>
+
   <input type="password" id="signupPassword" placeholder="Password"><br><br>
 
   <select id="signupRole">
@@ -18,9 +24,13 @@
     <option value="admin">Admin</option>
   </select><br><br>
 
-  <!-- ✅ BUTTON -->
+  <!-- ✅ BUTTON (CORRECT) -->
   <button onclick="signup()">Signup</button>
 
+  <br><br>
+  <a href="login.html">Already have account? Login</a>
+
+  <!-- ✅ JS MUST BE LINKED -->
   <script src="script.js"></script>
 
 </body>
