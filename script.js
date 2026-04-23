@@ -1,8 +1,6 @@
 console.log("JS CONNECTED ✅");
 
-// ==========================
-// SIGNUP FUNCTION
-// ==========================
+// SIGNUP
 function signup() {
 
   let name = document.getElementById("signupName").value.trim();
@@ -15,12 +13,11 @@ function signup() {
     return;
   }
 
-  // store user in localStorage
   let user = {
-    name: name,
-    email: email,
-    password: password,
-    role: role
+    name,
+    email,
+    password,
+    role
   };
 
   localStorage.setItem("user_" + email, JSON.stringify(user));
@@ -31,9 +28,7 @@ function signup() {
 }
 
 
-// ==========================
-// LOGIN FUNCTION
-// ==========================
+// LOGIN
 function login() {
 
   let email = document.getElementById("loginEmail").value.trim();
@@ -47,7 +42,7 @@ function login() {
   let storedUser = localStorage.getItem("user_" + email);
 
   if (!storedUser) {
-    alert("User not found ❌");
+    alert("User not found ❌ Please signup first");
     return;
   }
 
@@ -58,11 +53,11 @@ function login() {
     return;
   }
 
-  // ✅ use saved role (not selected role)
   localStorage.setItem("loggedUser", email);
 
   alert("Login successful ✅");
 
+  // REDIRECT BASED ON ROLE
   if (user.role === "admin") {
     window.location.href = "admin.html";
   } else {
@@ -71,18 +66,14 @@ function login() {
 }
 
 
-// ==========================
-// LOGOUT FUNCTION
-// ==========================
+// LOGOUT
 function logout() {
   localStorage.removeItem("loggedUser");
   window.location.href = "login.html";
 }
 
 
-// ==========================
 // PROTECT PAGES
-// ==========================
 document.addEventListener("DOMContentLoaded", function () {
 
   let user = localStorage.getItem("loggedUser");
