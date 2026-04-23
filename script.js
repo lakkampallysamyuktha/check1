@@ -1,6 +1,7 @@
 console.log("JS CONNECTED ✅");
 
 // SIGNUP
+// ================= SIGNUP =================
 function signup() {
 
   let name = document.getElementById("signupName").value.trim();
@@ -19,9 +20,42 @@ function signup() {
 
   alert("Signup successful ✅");
 
-  console.log("Going to login page...");
+  window.location.assign("login.html");
+}
 
-  window.location.assign("login.html");   /* ✅ FIX NAVIGATION */
+
+// ================= LOGIN =================
+function login() {
+
+  let email = document.getElementById("loginEmail").value.trim();
+  let password = document.getElementById("loginPassword").value.trim();
+
+  if (!email || !password) {
+    alert("Fill all fields ❌");
+    return;
+  }
+
+  let storedUser = localStorage.getItem("user_" + email);
+
+  if (!storedUser) {
+    alert("User not found ❌");
+    return;
+  }
+
+  let user = JSON.parse(storedUser);
+
+  if (user.password !== password) {
+    alert("Wrong password ❌");
+    return;
+  }
+
+  alert("Login successful ✅");
+
+  if (user.role === "admin") {
+    window.location.assign("admin.html");
+  } else {
+    window.location.assign("dashboard.html");
+  }
 }
 
 // LOGIN
