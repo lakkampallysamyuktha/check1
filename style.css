@@ -532,8 +532,7 @@ img {
   border: none;
 }
 
-/* CONTENT */
-.content {
+.dashboard-content {
   flex: 1;
   padding: 20px;
   background: #f1f5f9;
