@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-box">
+  <h2>Login</h2>
+
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
+
+  <select id="loginRole">
+    <option value="">Select Role</option>
+    <option value="employee">Employee</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button onclick="login()">Login</button>
+
+  <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
