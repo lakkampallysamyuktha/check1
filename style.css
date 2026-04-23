@@ -494,3 +494,74 @@ img {
   color: #6c63ff;
   text-decoration: none;
 }
+/* DASHBOARD LAYOUT */
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  margin: 10px 0;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.sidebar a.active {
+  color: #3b82f6;
+}
+
+.sidebar button {
+  margin-top: auto;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #f1f5f9;
+}
+
+/* TOPBAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  padding: 8px;
+  width: 250px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
