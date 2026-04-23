@@ -1,7 +1,3 @@
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
 
 * {
   box-sizing: border-box;
@@ -94,7 +90,6 @@ img {
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
-  box-sizing: border-box;
 }
 
 /* GRID FIX (REAL RESPONSIVE) */
@@ -102,7 +97,6 @@ img {
 .blog-container,
 .testimonial-container,
 .why-container {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 /* MOBILE CLEAN STACK */
@@ -218,8 +212,7 @@ img {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  gap: 30px;
   margin-top: 40px;
 }
 
@@ -289,8 +282,7 @@ img {
 
 .testimonial-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  gap: 30px;
   margin-top: 40px;
 }
 
@@ -320,7 +312,7 @@ img {
 
 .blog-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
@@ -334,7 +326,6 @@ img {
 .blog-img img {
   width: 100%;
 }
-
 .blog-content {
   padding: 20px;
 }
@@ -395,15 +386,14 @@ img {
   background: #f9fafb;
 }
 
-
 /* ================= BLOG SECTION ================= */
 .blog-section {
   text-align: center;
   padding: 60px 20px;
-  max-width: 1100px;
+  width: 100%;           /* ✅ FIX */
+  max-width: 1200px;     /* ✅ optional */
   margin: auto;
 }
-
 .blog-section h1 {
   font-size: 32px;
   margin-bottom: 10px;
@@ -416,12 +406,10 @@ img {
 
 /* ================= GRID ================= */
 .blog-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 /* ================= BLOG CARD ================= */
 .blog-card {
   background: white;
@@ -455,25 +443,21 @@ img {
 }
 /* ================= CONTACT CARDS ================= */
 .contact-cards {
-  max-width: 1100px;
-  margin: 40px auto;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+display: grid; /* instead of flex */
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
 }
-
 .contact-box {
-  background: white;
-  padding: 20px;
-  width: 280px;
-  text-align: center;
-  border-radius: 10px;
+background: white;
+padding: 20px;
+width: 100%; /* ✅ FIX */
+max-width: 100%; /* ✅ SAFETY */
+text-align: center;
+border-radius: 10px;
 
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  transition: 0.3s;
+box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+transition: 0.3s;
 }
-
 .contact-box:hover {
   transform: translateY(-5px);
 }
@@ -669,7 +653,6 @@ img {
   font-weight: 500;
 }
 
-
 /* ================= GRID ================= */
 .grid {
   display: flex;
@@ -681,14 +664,14 @@ img {
 /* ================= CARD ================= */
 .card {
   background: white;
-  width: 280px;
+  width: 100%;          /* ✅ FIX */
+  max-width: 100%;      /* ✅ SAFETY */
   border-radius: 12px;
   overflow: hidden;
 
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: 0.3s;
 }
-
 .card:hover {
   transform: translateY(-8px);
 }
@@ -958,3 +941,11 @@ img {
   font-size: 13px;
   color: #94a3b8;
 }
+
+
+.blog-card,
+.card,
+.contact-box {
+  width: 100%;
+}
+
