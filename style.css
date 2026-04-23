@@ -11,42 +11,78 @@ body {
   color: #111827;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #0f172a;
+  background: #0b132b;
   color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
 }
 
 .logo {
   color: #6366f1;
 }
 
+/* MENU */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
 .nav-links a {
-  margin: 0 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.nav-links a:hover {
-  color: #6366f1;
-}
-
-.btn {
-  background: linear-gradient(135deg, #6366f1, #3b82f6);
-  padding: 8px 18px;
-  border-radius: 8px;
   color: white;
   text-decoration: none;
 }
 
+/* LOGIN */
+.login-btn {
+  background: #6366f1;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+
+    background: #0b132b;
+
+    flex-direction: column;
+    align-items: center;
+
+    display: none; /* hidden by default */
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .login-btn {
+    display: none; /* optional */
+  }
+}
 /* ================= HERO ================= */
 .hero {
   height: 90vh;
@@ -570,28 +606,7 @@ body {
   font-weight: 500;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
 
-  .main {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  .topbar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .topbar input {
-    width: 100%;
-  }
-}
 /* ================= GRID ================= */
 .grid {
   display: flex;
