@@ -7,9 +7,56 @@
 
 <body>
 
-<div class="dashboard">
-  <h1>Welcome to Dashboard </h1>
-  <button onclick="logout()">Logout</button>
+<div class="main">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>STACKLY</h2>
+
+    <a class="active">Dashboard</a>
+    <a>Projects</a>
+    <a>Analytics</a>
+    <a>Team</a>
+    <a>Settings</a>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="topbar">
+      <input type="text" placeholder="Search projects...">
+      <div class="user">John Doe</div>
+    </div>
+
+    <h1>Overview Dashboard</h1>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+      <div class="card">
+        <h3>Total Projects</h3>
+        <h1>24</h1>
+        <p style="color:green;">↑ 12% from last month</p>
+      </div>
+
+      <div class="card">
+        <h3>Active Tasks</h3>
+        <h1>145</h1>
+        <p style="color:red;">↓ 5% from last month</p>
+      </div>
+
+      <div class="card">
+        <h3>Team Members</h3>
+        <h1>48</h1>
+        <p style="color:green;">↑ 2 new this week</p>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
 <script src="script.js"></script>
