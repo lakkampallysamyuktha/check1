@@ -5,10 +5,19 @@
   box-sizing: border-box;
 }
 
+/* MEDIA FIX */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* BODY */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background: #f4f7fb;
   color: #333;
+  overflow-x: hidden; /* prevent side scroll */
 }
 
 /* ================= NAVBAR ================= */
@@ -20,7 +29,8 @@ body {
   background: #020617;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -46,6 +56,7 @@ body {
   border-radius: 6px;
   color: white;
   border: none;
+  cursor: pointer;
 }
 
 /* ================= HERO ================= */
@@ -108,8 +119,20 @@ body {
   border-radius: 12px;
 }
 
-.card img {
-  width: 100%;
+/* ================= BLOG ================= */
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.blog-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 /* ================= CONTACT ================= */
@@ -125,6 +148,7 @@ body {
   max-width: 300px;
   background: white;
   padding: 20px;
+  border-radius: 12px;
 }
 
 .contact-section {
@@ -139,33 +163,31 @@ body {
   max-width: 400px;
   background: white;
   padding: 20px;
+  border-radius: 12px;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-}
-
-/* ================= BLOG ================= */
-.blog-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.blog-card {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background: white;
-  padding: 20px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 /* ================= FOOTER ================= */
+.footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 40px 20px;
+}
+
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+}
+
+.footer-box {
+  flex: 1 1 200px;
 }
 
 /* ================= DASHBOARD ================= */
@@ -179,9 +201,10 @@ body {
   background: #1e293b;
   color: white;
   padding: 20px;
+  flex-shrink: 0;
 }
 
-.dashboard-content {
+.content {
   flex: 1;
   padding: 20px;
 }
@@ -196,39 +219,70 @@ body {
   flex: 1 1 200px;
   background: white;
   padding: 20px;
+  border-radius: 10px;
 }
 
-/* ================= IMAGES ================= */
-img {
-  max-width: 100%;
-  height: auto;
+/* ================= AUTH (LOGIN/SIGNUP) ================= */
+.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #4f46e5, #9333ea);
 }
 
-/* ================= MOBILE FIX ================= */
+.auth-box {
+  background: white;
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
+  /* NAVBAR */
   .navbar {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
+  .nav-links {
+    justify-content: center;
+  }
+
+  /* HERO */
   .hero h1 {
     font-size: 24px;
   }
 
+  /* STACK EVERYTHING */
+  .grid,
+  .blog-grid,
+  .contact-cards,
+  .contact-section,
+  .dashboard-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* FULL WIDTH CARDS */
+  .card,
+  .blog-card,
+  .contact-box,
+  .dashboard-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* SIDEBAR */
   .main {
     flex-direction: column;
   }
 
   .sidebar {
-    width: 100%;
-  }
-
-  .contact-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .topbar input {
     width: 100%;
   }
 
