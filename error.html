@@ -8,7 +8,7 @@
 <body style="text-align:center; padding:100px;">
 
   <h1>✅ Logged Out Successfully</h1>
-  <p>Your session has ended.</p>
+  <p>You have been logged out.</p>
 
   <button onclick="goHome()">🏠 Back to Home</button>
 
@@ -16,6 +16,11 @@
     function goHome(){
       window.location.href = "index.html";
     }
+
+    // OPTIONAL AUTO REDIRECT (3 sec)
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 3000);
   </script>
 
 </body>
