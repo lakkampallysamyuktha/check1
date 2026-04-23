@@ -551,14 +551,14 @@ img {
   width: 250px;
 }
 
-/* CARDS */
-.cards {
+/* DASHBOARD CARDS */
+.dashboard-cards {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.card {
+.dashboard-card {
   background: white;
   padding: 20px;
   border-radius: 10px;
