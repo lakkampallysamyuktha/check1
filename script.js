@@ -38,9 +38,8 @@ function login() {
 
   let email = document.getElementById("loginEmail").value.trim();
   let password = document.getElementById("loginPassword").value.trim();
-  let role = document.getElementById("loginRole").value;
 
-  if (!email || !password || !role) {
+  if (!email || !password) {
     alert("Please fill all fields ❌");
     return;
   }
@@ -59,17 +58,12 @@ function login() {
     return;
   }
 
-  if (user.role !== role) {
-    alert("Role mismatch ❌");
-    return;
-  }
-
-  // login success
+  // ✅ use saved role (not selected role)
   localStorage.setItem("loggedUser", email);
 
   alert("Login successful ✅");
 
-  if (role === "admin") {
+  if (user.role === "admin") {
     window.location.href = "admin.html";
   } else {
     window.location.href = "dashboard.html";
