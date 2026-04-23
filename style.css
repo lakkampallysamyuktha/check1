@@ -13,13 +13,12 @@ body {
 
 /* NAVBAR */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #0b132b;
-  color: white;
-  position: relative;
+  position: sticky;   /* stays on top while scrolling */
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(15, 23, 42, 0.9); /* solid enough */
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -56,31 +55,27 @@ body {
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
-  .menu-toggle {
-    display: block;
-  }
-
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 70px;   /* below navbar */
     left: 0;
     width: 100%;
 
-    background: #0b132b;
+    background: #0f172a;
 
     flex-direction: column;
     align-items: center;
 
-    display: none; /* hidden by default */
-    padding: 20px 0;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: 0.4s ease;
+    z-index: 999;  /* ensure above content */
   }
 
   .nav-links.active {
-    display: flex;
-  }
-
-  .login-btn {
-    display: none; /* optional */
+    max-height: 300px;
+    padding: 20px 0;
   }
 }
 /* ================= HERO ================= */
