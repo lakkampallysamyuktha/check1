@@ -1,6 +1,5 @@
 console.log("JS CONNECTED ✅");
 
-// SIGNUP
 // ================= SIGNUP =================
 function signup() {
 
@@ -20,7 +19,7 @@ function signup() {
 
   alert("Signup successful ✅");
 
-  window.location.assign("login.html");
+  window.location.href = "login.html";
 }
 
 
@@ -51,45 +50,13 @@ function login() {
 
   alert("Login successful ✅");
 
+  // ✅ REDIRECT
   if (user.role === "admin") {
-    window.location.assign("admin.html");
+    window.location.href = "admin.html";
   } else {
-    window.location.assign("dashboard.html");
+    window.location.href = "dashboard.html";
   }
 }
-
-// LOGIN
-function login() {
-
-  let email = document.getElementById("loginEmail").value;
-  let password = document.getElementById("loginPassword").value;
-
-  let storedUser = localStorage.getItem("user_" + email);
-
-  if (!storedUser) {
-    alert("User not found");
-    return;
-  }
-
-  let user = JSON.parse(storedUser);
-
-  if (user.password !== password) {
-    alert("Wrong password");
-    return;
-  }
-
-  alert("Login success");
-
-  console.log("Redirecting...");
-
-  if (user.role === "admin") {
-    window.location.assign("admin.html");
-  } else {
-    window.location.assign("dashboard.html");
-  }
-}
-
-
 // LOGOUT
 function logout() {
   localStorage.removeItem("loggedUser");
