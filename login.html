@@ -2,22 +2,26 @@
 <html>
 <head>
   <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- LINK CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="auth-page">
 
-  <h2>Login</h2>
+  <div class="auth-box">
+    <h2>Login</h2>
 
-  <!-- INPUTS -->
-  <input type="email" id="loginEmail" placeholder="Enter Email"><br><br>
-  <input type="password" id="loginPassword" placeholder="Enter Password"><br><br>
+    <input type="email" id="loginEmail" placeholder="Enter Email">
+    <input type="password" id="loginPassword" placeholder="Enter Password">
 
-  <!-- BUTTON -->
-  <button onclick="login()">Login</button>
+    <button onclick="login()">Login</button>
 
-  <p>Don't have account? <a href="signup.html">Signup</a></p>
+    <p>Don't have account? <a href="signup.html">Signup</a></p>
+  </div>
 
-  <!-- JS -->
+  <!-- LINK JS -->
   <script src="script.js"></script>
 
 </body>
