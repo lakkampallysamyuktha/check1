@@ -2,35 +2,33 @@
 <html>
 <head>
   <title>Signup</title>
-
-  <!-- ✅ IMPORTANT (mobile fix also) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- LINK CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="auth-page">
 
-  <h2>Signup</h2>
+  <div class="auth-box">
+    <h2>Signup</h2>
 
-  <!-- INPUTS -->
-  <input type="text" id="signupName" placeholder="Name"><br><br>
+    <input type="text" id="signupName" placeholder="Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
 
-  <input type="email" id="signupEmail" placeholder="Email"><br><br>
+    <select id="signupRole">
+      <option value="">Select Role</option>
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
 
-  <input type="password" id="signupPassword" placeholder="Password"><br><br>
+    <button onclick="signup()">Signup</button>
 
-  <select id="signupRole">
-    <option value="">Select Role</option>
-    <option value="user">User</option>
-    <option value="admin">Admin</option>
-  </select><br><br>
+    <p><a href="login.html">Already have account? Login</a></p>
+  </div>
 
-  <!-- ✅ BUTTON (CORRECT) -->
-  <button onclick="signup()">Signup</button>
-
-  <br><br>
-  <a href="login.html">Already have account? Login</a>
-
-  <!-- ✅ JS MUST BE LINKED -->
+  <!-- LINK JS -->
   <script src="script.js"></script>
 
 </body>
