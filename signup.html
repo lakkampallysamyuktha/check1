@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Signup</title>
+  <meta charset="UTF-8">
+  <title>Signup - Stackly</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- LINK CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="auth-page">
+<body>
 
-  <div class="auth-box">
-    <h2>Signup</h2>
+<!-- NAVBAR -->
+<header>
+  <div class="logo">
+      <img src="images/stackly.logo.jpeg" alt="Stackly Logo">
 
-    <input type="text" id="signupName" placeholder="Name">
-    <input type="email" id="signupEmail" placeholder="Email">
-    <input type="password" id="signupPassword" placeholder="Password">
-
-    <select id="signupRole">
-      <option value="">Select Role</option>
-      <option value="user">User</option>
-      <option value="admin">Admin</option>
-    </select>
-
-<button onclick="signup()">Signup</button>
-
-    <p><a href="login.html">Already have account? Login</a></p>
   </div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
 
-  <!-- LINK JS -->
-  <script src="script.js"></script>
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html" class="active">Signup</a>
+  </nav>
+</header>
 
+<!-- SIGNUP FORM -->
+ <section class="auth-body">
+<div class="auth-box">
+  <h2>Create Account</h2>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <!-- NEW: ROLE SELECT -->
+  <select id="role">
+    <option value="">Select Role</option>
+    <option value="employee">Employee</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button onclick="signup()">Sign Up</button>
+
+  <p>Already have an account? <a href="login.html">Login</a></p>
+</div>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
