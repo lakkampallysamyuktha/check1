@@ -1,60 +1,28 @@
 console.log("JS CONNECTED ✅");
 
-// ================= SIGNUP =================
-function signup() {
+// LOGIN
+function login() {
+  let email = document.getElementById("loginEmail").value;
+  let pass = document.getElementById("loginPassword").value;
+  let role = document.getElementById("loginRole").value;
 
-  let name = document.getElementById("signupName").value.trim();
-  let email = document.getElementById("signupEmail").value.trim();
-  let password = document.getElementById("signupPassword").value.trim();
-  let role = document.getElementById("signupRole").value;
-
-  if (!name || !email || !password || !role) {
-    alert("Fill all fields ❌");
-    return;
+  if (email === "" || pass === "" || role === "") {
+    alert("Please fill all fields!");
+  } else {
+    alert("Login Successful as " + role);
   }
-
-  let user = { name, email, password, role };
-
-  localStorage.setItem("user_" + email, JSON.stringify(user));
-
-  alert("Signup successful ✅");
-
-  window.location.href = "login.html";
 }
 
+// SIGNUP
+function signup() {
+  let email = document.getElementById("email").value;
+  let pass = document.getElementById("password").value;
+  let role = document.getElementById("role").value;
 
-// ================= LOGIN =================
-function login() {
-
-  let email = document.getElementById("loginEmail").value.trim();
-  let password = document.getElementById("loginPassword").value.trim();
-
-  if (!email || !password) {
-    alert("Fill all fields ❌");
-    return;
-  }
-
-  let storedUser = localStorage.getItem("user_" + email);
-
-  if (!storedUser) {
-    alert("User not found ❌");
-    return;
-  }
-
-  let user = JSON.parse(storedUser);
-
-  if (user.password !== password) {
-    alert("Wrong password ❌");
-    return;
-  }
-
-  alert("Login successful ✅");
-
-  // ✅ REDIRECT
-  if (user.role === "admin") {
-    window.location.href = "admin.html";
+  if (email === "" || pass === "" || role === "") {
+    alert("Please fill all fields!");
   } else {
-    window.location.href = "dashboard.html";
+    alert("Signup Successful as " + role);
   }
 }
 // LOGOUT
